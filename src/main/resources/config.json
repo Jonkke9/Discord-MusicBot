@@ -1,0 +1,57 @@
+{
+  "token": " ",
+  "spotify-client-id": " ",
+  "spotify-client-secret": " ",
+  "prefix": "-",
+  "activity": "-Play",
+  "color": "#1bb51e",
+
+  "messages": {
+    "bot-not-in-vc": "I am not currently connected to any voce channel.",
+    "user-not-in-vc": "You have to be connected to a voice channel to do that.",
+    "not-in-same-vc": "You have to be connected to the same voice channel as i am to do that.",
+    "nothing-is-playing": "Nothing is playing right now.",
+    "incorrect-num": "\"%arg0%\" is not a valid number",
+    "no-matches": "No matches found.",
+    "added-one-to-queue": "\uD83C\uDFB6 Added **%arg0%** to the queue (%arg1%).",
+    "added-many-to-queue": "\uD83C\uDFB6 Added **%arg0%** tracks to the queue.",
+    "queue-shuffled": "Queue has been shuffled.",
+    "volume-set": "Volume set to %arg0%%.",
+    "repeat-status": "Repeat turned %arg0%.",
+    "track-skipped": "⏭ **%arg0%** was skipped.",
+    "track-fast-forwarded": "Fast-forwarded %arg0% seconds.",
+    "track-rewinded": "Rewinded %arg0% seconds.",
+
+    "command-not-found": "Command by the name \"%arg0%\" was not found.",
+    "generic-error": "Something went wrong while executing the command.",
+    "spotify-not-enabled": "Spotify is not enabled",
+
+    "cmd-volume-description": "Changes volume of the music.",
+    "cmd-skip-description": "Skips the current track.",
+    "cmd-shuffle-description": "Shuffles the playlist queue.",
+    "cmd-queue-description": "Shows what tracks are in the queue.",
+    "cmd-play-description": "Starts playing an audio track or playlist.",
+    "cmd-pause-description": "Pauses or unpauses the audio.",
+    "cmd-loop-description": "Toggles looping playlist on or off",
+    "cmd-fast-forward-description": "Fast forwards specified amount of seconds. Default: 10s.",
+    "cmd-rewind-description": "Rewind specified amount of seconds. Default: 10s.",
+    "cmd-disconnect-description": "Stops playing and disconnects the bot from the vc.",
+    "cmd-help-description": "Displays commands and their descriptions.",
+    "cmd-now-playing-description": "Displays currently playing track.",
+
+    "on": "on",
+    "off": "off",
+
+    "cmd-play-spotify-support-warning": "Spotify tracks cant be played directly from spotify so they are searched from youtube instead.",
+
+
+    "cmd-info": "- **Aliases**: %arg0% \n- **Description**: %arg1% \n- **Usage**: %arg2%",
+    "cmd-help-title": "Help - Commands",
+
+    "cmd-queue-empty": "The queue is empty.",
+    "cmd-queue-page": "Page %arg0%/%arg1%",
+    "cmd-queue-title": "Queue",
+    "cmd-queue-track": "**%arg0%**. %arg1%",
+    "cmd-queue-more": "and %arg0% more..."
+  }
+}
