@@ -4,6 +4,7 @@ import com.github.jonkke9.musicbot.Main;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.source.AudioSourceManagers;
+import dev.lavalink.youtube.YoutubeAudioSourceManager;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
@@ -23,8 +24,10 @@ public final class PlayerManager {
     public PlayerManager() {
         this.musicManagers = new HashMap<>();
         this.audioPlayerManager = new DefaultAudioPlayerManager();
-        AudioSourceManagers.registerRemoteSources(this.audioPlayerManager);
-        //AudioSourceManagers.registerLocalSource(this.audioPlayerManager);
+        final YoutubeAudioSourceManager ytSourceManager = new dev.lavalink.youtube.YoutubeAudioSourceManager();
+        this.audioPlayerManager.registerSourceManager(ytSourceManager);
+        AudioSourceManagers.registerRemoteSources(this.audioPlayerManager,
+                com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.class);
     }
 
     // Method to get the music manager for a guild
