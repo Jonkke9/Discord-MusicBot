@@ -20,7 +20,9 @@ import java.util.logging.Logger;
 public final class Config {
 
     private static final Logger LOGGER = Logger.getLogger(Config.class.getName());
+    private static final String CONFIG_DIRECTORY = "config";
     private static final String CONFIG_FILE_NAME = "config.json";
+    private static final String CONFIG_FILE_PATH = CONFIG_DIRECTORY + "/" + CONFIG_FILE_NAME;
 
     public final String token;
     public final String spotifyClientId;
@@ -36,18 +38,22 @@ public final class Config {
     public Config() {
         final Gson gson = new Gson();
         HashMap<String, Object> map = new HashMap<>();
-
         try {
-            final File configFile = new File(CONFIG_FILE_NAME);
+            final File configDir = new File(CONFIG_DIRECTORY);
+            if (!configDir.exists()) {
+                configDir.mkdirs();
+            }
+
+            final File configFile = new File(CONFIG_FILE_PATH);
             if (!configFile.exists()) {
                 try (InputStream is = getClass().getResourceAsStream("/" + CONFIG_FILE_NAME)) {
                     if (is != null) {
-                        Files.copy(is, Paths.get(CONFIG_FILE_NAME));
+                        Files.copy(is, Paths.get(CONFIG_FILE_PATH));
                     }
                 }
             }
 
-            try (FileReader reader = new FileReader(CONFIG_FILE_NAME)) {
+            try (FileReader reader = new FileReader(CONFIG_FILE_PATH)) {
                 map = gson.fromJson(reader, new TypeToken<HashMap<String, Object>>(){}.getType());
             }
 

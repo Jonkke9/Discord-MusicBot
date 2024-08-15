@@ -19,7 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 // This clas contains instances of everything that is needed by multiple classes
-public class Bot {
+public final class Bot {
 
     private static final Logger LOGGER = Logger.getLogger(Bot.class.getName());
 
