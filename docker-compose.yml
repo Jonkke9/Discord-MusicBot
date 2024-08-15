@@ -1,0 +1,12 @@
+services:
+  music_bot:
+    image: openjdk:17-jdk-alpine
+    container_name: jonkke9-musicbot
+    working_dir: /app
+    command: >
+      sh -c "
+        wget -O bot.jar https://github.com/Jonkke9/Discord-MusicBot/releases/download/v0.0.3/MusicBot.jar &&
+        java -jar bot.jar
+      "
+    volumes:
+      - ./MusicBot:/app/config
